@@ -1,0 +1,67 @@
+{
+  "version": "v1.0.0",
+  "algorithm": "RandomForestClassifier",
+  "parameters": {
+    "n_estimators": 100,
+    "max_depth": 10,
+    "min_samples_split": 4,
+    "min_samples_leaf": 2,
+    "class_weight": "balanced",
+    "random_state": 42
+  },
+  "features": [
+    "EducationLevel",
+    "ExperienceYears",
+    "PreviousCompanies",
+    "DistanceFromCompany",
+    "InterviewScore",
+    "SkillScore",
+    "PersonalityScore",
+    "RecruitmentStrategy"
+  ],
+  "data_source": "mongodb_candidates (1500 records)",
+  "total_dataset_size": 1500,
+  "train_samples": 1200,
+  "test_samples": 300,
+  "metrics": {
+    "accuracy": 0.9367,
+    "accuracy_pct": 93.67,
+    "precision": 0.9111,
+    "recall": 0.8817,
+    "f1_score": 0.8962,
+    "roc_auc": 0.9331,
+    "confusion_matrix": {
+      "matrix": [
+        [
+          199,
+          8
+        ],
+        [
+          11,
+          82
+        ]
+      ],
+      "true_negatives": 199,
+      "false_positives": 8,
+      "false_negatives": 11,
+      "true_positives": 82
+    },
+    "sample_counts": {
+      "total_test_samples": 300,
+      "true_rejected": 207,
+      "true_selected": 93
+    }
+  },
+  "feature_importances": {
+    "RecruitmentStrategy": 0.3429,
+    "SkillScore": 0.1281,
+    "PersonalityScore": 0.1271,
+    "InterviewScore": 0.1214,
+    "EducationLevel": 0.1007,
+    "ExperienceYears": 0.0794,
+    "DistanceFromCompany": 0.0719,
+    "PreviousCompanies": 0.0286
+  },
+  "trained_at": "2026-11-03T14:03:33.288920+00:00",
+  "model_file": "random_forest_hiring_model.joblib"
+}
